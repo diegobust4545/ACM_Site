@@ -1,0 +1,16 @@
+{% extends 'home/index.html' %}
+{% block body_class %}template-aboutpage{% endblock %}
+
+
+{% block content %}
+{% load wagtailcore_tags %}
+
+<div class="container">
+{% for page in self.get_children.specific %}
+<p>Here in event page</p>
+    {{ page.title }}
+    {% image page.representative_image width-400 %}
+{% endfor %}
+</div>
+
+{% endblock %}

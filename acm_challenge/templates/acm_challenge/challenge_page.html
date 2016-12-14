@@ -1,0 +1,29 @@
+{% extends "home/index.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-committteepage{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Coding Challenges</h2>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <div class="caption">
+                        <h1>{{page.challenge_title}}<br>
+                        </h1>
+                        <p>{{page.challenge_description|richtext}}</p>
+                        <br>
+                        <h2>Code</h2>
+                        <br>
+                        <p>{{page.challenge_code|richtext}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
